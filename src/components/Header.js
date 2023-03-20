@@ -6,16 +6,22 @@ export default function Header() {
     <div className="header">
       <div className="top">
         <Link to={'/'}>
-          <h1>
+          <div className="title">
             <img
               src="https://memo.naver.com/favicon.ico?762862db-170b-49fa-8ba2-5fbf123d34df"
               alt=""
             />
-            메모
-          </h1>
+            <h1>메모</h1>
+          </div>
         </Link>
       </div>
-      <div className="left"></div>
+      <div className="left">
+        <div className="writememo">
+          <Link to={'/write'}>
+            <a href="#">새 메모 쓰기</a>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
