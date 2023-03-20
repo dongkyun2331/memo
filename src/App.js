@@ -1,5 +1,6 @@
-import Header from "./components/Header";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './components/Header'
+import NoteList from './components/NoteList'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 export default function App() {
   return (
@@ -7,9 +8,9 @@ export default function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route />
+          <Route path="/" element={<NoteList />} />
         </Routes>
       </div>
     </BrowserRouter>
-  );
+  )
 }
