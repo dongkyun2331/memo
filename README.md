@@ -18,6 +18,9 @@ json-server --watch ./src/db/data.json
 ### firebase
 
 npm install firebase
+npm install -g firebase-tools
+firebase login
+firebase init
 
 ### import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
