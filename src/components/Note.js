@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MdMode, MdDelete } from 'react-icon/md'
+import { MdMode, MdDelete } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import 'moment/locale/ko'
@@ -15,5 +15,23 @@ export default function Note({ note }) {
     }
   }
 
-  return <li className="note"></li>
+  return (
+    <li className="note">
+      <div className="top">
+        <div className="date">{date}</div>
+        <div className="btns">
+          <span>
+            <Link to={'/edit'} state={note}>
+              <MdMode />
+            </Link>
+          </span>
+          <span>
+            <MdDelete onClick={onDelete} />
+          </span>
+        </div>
+      </div>
+      <h4 className="title">{note.title}</h4>
+      <p>{note.detail}</p>
+    </li>
+  )
 }

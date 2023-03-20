@@ -21,6 +21,7 @@ npm install firebase
 npm install -g firebase-tools
 firebase login
 firebase init
+firebase deploy
 
 ### import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
