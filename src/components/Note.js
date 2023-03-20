@@ -30,8 +30,10 @@ export default function Note({ note }) {
           </span>
         </div>
       </div>
-      <h4 className="title">{note.title}</h4>
-      <p>{note.detail}</p>
+      <div className="content">
+        <h4 className="title">{note.title}</h4>
+        <p>{note.detail}</p>
+      </div>
     </li>
   )
 }
