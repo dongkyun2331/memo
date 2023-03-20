@@ -24,16 +24,16 @@ a {
   align-items: center;
 }
 
-.top .title {
+.top .logo {
   margin-left: 20px;
   display: flex;
 }
 
-.top .title h1 {
+.top .logo h1 {
   font-size: 20px;
 }
 
-.top .title img {
+.top .logo img {
   margin-right: 10px;
 }
 

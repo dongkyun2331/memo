@@ -6,7 +6,7 @@ export default function Header() {
     <div className="header">
       <div className="top">
         <Link to={'/'}>
-          <div className="title">
+          <div className="logo">
             <img
               src="https://memo.naver.com/favicon.ico?762862db-170b-49fa-8ba2-5fbf123d34df"
               alt=""
