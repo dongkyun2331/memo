@@ -19,6 +19,7 @@ json-server --watch ./src/db/data.json
 
 npm install firebase
 npm install -g firebase-tools
+
 firebase login
 firebase init
 firebase deploy
