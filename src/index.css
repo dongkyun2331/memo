@@ -98,6 +98,7 @@ body {
 .note p {
   font-size: 15px;
   word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .note .top {
