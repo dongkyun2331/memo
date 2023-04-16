@@ -1,8 +1,8 @@
-import Header from './components/Header'
-import NoteList from './components/NoteList'
-import Write from './components/Write'
-import Edit from './components/Edit'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from "./components/Header";
+import NoteList from "./components/NoteList";
+import Write from "./components/Write";
+import Edit from "./components/Edit";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
@@ -16,5 +16,5 @@ export default function App() {
         </Routes>
       </div>
     </BrowserRouter>
-  )
+  );
 }
