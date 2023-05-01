@@ -1,26 +1,25 @@
-import { useRef } from 'react'
-import 'moment/locale/ko'
-import { useNavigate } from 'react-router-dom'
-import { db } from '../firebase'
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { useRef } from "react";
+import "moment/locale/ko";
+import { useNavigate } from "react-router-dom";
+import { db } from "../firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function Write() {
-  const navigate = useNavigate()
-  const detailRef = useRef()
+  const navigate = useNavigate();
+  const detailRef = useRef();
 
   async function onWrite(e) {
-    e.preventDefault()
-
-    const docRef = await addDoc(collection(db, 'notes'), {
+    e.preventDefault();
+    const docRef = await addDoc(collection(db, "notes"), {
       detail: detailRef.current.value,
       date: serverTimestamp(),
-    })
-    navigate('/')
+    });
+    navigate("/");
   }
 
   function goBack(e) {
-    e.preventDefault()
-    navigate(-1)
+    e.preventDefault();
+    navigate(-1);
   }
 
   return (
@@ -35,5 +34,5 @@ export default function Write() {
         </div>
       </form>
     </div>
-  )
+  );
 }
