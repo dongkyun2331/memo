@@ -10,12 +10,10 @@ export default function Edit() {
 
   async function onEdit(e) {
     e.preventDefault();
-
     const noteRef = doc(db, "notes", note.id);
     await updateDoc(noteRef, {
       detail: detailRef.current.value,
     });
-
     navigte("/");
   }
 
