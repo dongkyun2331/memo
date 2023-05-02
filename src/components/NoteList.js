@@ -1,26 +1,25 @@
-import { useEffect, useState } from 'react'
-import Note from './Note'
-import { db } from '../firebase'
-import { collection, query, onSnapshot, orderBy } from 'firebase/firestore'
+import { useEffect, useState } from "react";
+import Note from "./Note";
+import { db } from "../firebase";
+import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 
 export default function NoteList() {
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    const q = query(collection(db, 'notes'), orderBy('date', 'desc'))
+    const q = query(collection(db, "notes"), orderBy("date", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const items = []
+      const items = [];
       querySnapshot.forEach((doc) => {
         items.push({
           ...doc.data(),
           id: doc.id,
-        })
-      })
-      setNotes(items)
-    })
-
-    return () => unsubscribe()
-  }, [])
+        });
+      });
+      setNotes(items);
+    });
+    return () => unsubscribe();
+  }, []);
 
   return (
     <ul className="list">
@@ -28,5 +27,5 @@ export default function NoteList() {
         <Note note={note} key={note.id} />
       ))}
     </ul>
-  )
+  );
 }
