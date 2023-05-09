@@ -1,16 +1,16 @@
-import { MdMode, MdDelete } from 'react-icons/md'
-import { Link } from 'react-router-dom'
-import moment from 'moment'
-import 'moment/locale/ko'
-import { db } from '../firebase'
-import { doc, deleteDoc } from 'firebase/firestore'
+import { MdMode, MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
+import moment from "moment";
+import "moment/locale/ko";
+import { db } from "../firebase";
+import { doc, deleteDoc } from "firebase/firestore";
 
 export default function Note({ note }) {
-  const date = moment(note.date.toDate()).format('YYYY-MM-D h:mm')
+  const date = moment(note.date.toDate()).format("YYYY-MM-D h:mm");
 
   async function onDelete() {
-    if (window.confirm('정말 삭제하시겠습니까')) {
-      await deleteDoc(doc(db, 'notes', note.id))
+    if (window.confirm("정말 삭제하시겠습니까")) {
+      await deleteDoc(doc(db, "notes", note.id));
     }
   }
 
@@ -20,7 +20,7 @@ export default function Note({ note }) {
         <div className="date">{date}</div>
         <div className="btns">
           <span>
-            <Link to={'/edit'} state={note}>
+            <Link to={"/edit"} state={note}>
               <MdMode />
             </Link>
           </span>
@@ -33,5 +33,5 @@ export default function Note({ note }) {
         <p>{note.detail}</p>
       </div>
     </li>
-  )
+  );
 }
